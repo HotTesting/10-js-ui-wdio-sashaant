@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "Demonstratio project webdriver ",
   "scripts": {
-    "test": "wdio"
+    "test": "wdio wdio.conf.ts"
   },
   "repository": {
     "type": "git",
