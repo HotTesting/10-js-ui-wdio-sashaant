@@ -1,6 +1,6 @@
 describe('Website', () => {
 
-    it('should open', () => {
+    it.skip('should open', () => {
         console.log(browser.sessionId)
         browser.setWindowSize(1280, 800)
 
@@ -21,7 +21,7 @@ describe('Website', () => {
     //     })
     // })
 
-    it('How to clear local storage', function () {
+    it.skip('How to clear local storage', function () {
         browser.pause(5000)
         try {
             browser.execute(function () {

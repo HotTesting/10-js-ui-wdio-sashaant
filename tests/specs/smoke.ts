@@ -11,7 +11,7 @@ describe('Website', function () {
         expect($('#logo')).toBeDisplayed()
     })
 
-    it('should allow user to register', function () {
+    it.skip('should allow user to register', function () {
         browser.url('/index.php?route=account/register')
         
         expect($('#content')).toBeDisplayed({

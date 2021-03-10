@@ -10,7 +10,7 @@
 
 // http://93.126.97.71:10082/index.php?route=account/return/add
 describe("product return", function () {
-    it("should be submited", function () {
+    it.skip("should be submited", function () {
         browser.url("/index.php?route=account/return/add")
         browser.pause(3000)
 
@@ -54,7 +54,7 @@ describe("product return", function () {
 
   // http://93.126.97.71:10082/index.php?route=account/voucher
 describe("gift certificate", function () {
-    it("can be purchased", function () {
+    it.skip("can be purchased", function () {
         browser.url('/index.php?route=account/voucher')
 
         const recepientsName = $('#input-to-name')
@@ -89,7 +89,7 @@ describe("gift certificate", function () {
 
  // http://93.126.97.71:10082/index.php?route=information/contact
 describe("contact us form", function () {
-    it("should send messages to shop administration", function () {
+    it.skip("should send messages to shop administration", function () {
         browser.url('/index.php?route=information/contact')
 
         const yourName = $('#input-name')
@@ -111,7 +111,7 @@ describe("contact us form", function () {
 
 // Search items form
 describe("search items", function () {
-    it("should show results in case multiple items matches", function () {
+    it.skip("should show results in case multiple items matches", function () {
         browser.url('/')
         browser.pause(2000)
 
@@ -124,7 +124,7 @@ describe("search items", function () {
         expect($$('.product-thumb h4')).toHaveTextContaining('Mac',{wait:3000})
     });
 
-    it("should redirect to 'no matching results' in case no items matched", function () {
+    it.skip("should redirect to 'no matching results' in case no items matched", function () {
         browser.url('/')
         browser.pause(2000)
 
@@ -134,7 +134,10 @@ describe("search items", function () {
         const searchButton=$('#search button')
         searchButton.click()
 
+        const noResultsMsg = $('p=There is no product that matches the search criteria.');
+
         expect($$('#content p:nth-of-type(2)')).toBePresent()
-        expect($$('#content p:nth-of-type(2)')).toHaveText('There is no product that matches the search criteria.');
+        //expect($$('#content p:nth-of-type(2)')).toHaveText('There is no product that matches the search criteria.');
+        expect(noResultsMsg).toBeDisplayed()
     });
 });
